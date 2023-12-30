@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Similarity Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #008080;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #008080;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005757;
+        }
+
+        h2 {
+            color: #008080;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Similarity Score Calculator by Prashant Gaikwad</h1>
+    
+    <form action="/get_similarity" method="post">
+        <label for="text1">Text 1:</label>
+        <textarea id="text1" name="text1" rows="4" cols="50" required></textarea>
+
+        <br>
+
+        <label for="text2">Text 2:</label>
+        <textarea id="text2" name="text2" rows="4" cols="50" required></textarea>
+
+        <br>
+
+        <input type="submit" value="Predict Similarity Score">
+    </form>
+
+    {% if similarity_score is defined %}
+        <h2>Similarity Score:</h2>
+        <p>{{ similarity_score }}</p>
+        <p>Text 1: {{ text1 }}</p>
+        <p>Text 2: {{ text2 }}</p>
+    {% endif %}
+
+    <footer>
+        Contact: <a href="mailto:prashantgaikwad132@gmail.com">prashantgaikwad132@gmail.com</a>
+        <h3>Prashant Gaikwad - Experienced Machine Learning Engineer specializing in Machine Learning, Deep Learning, OpenCV, NLP, and AWS for efficient and scalable data-driven solutions, with 2.3 years of experience in the above mentioned fields.</h3>
+    </footer>
+</body>
+</html>
